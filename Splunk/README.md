@@ -10,6 +10,11 @@ official `splunk-logging` SDK via the **HTTP Event Collector (HEC)**.
 In Splunk Web: `Settings > Data Inputs > HTTP Event Collector > New Token`.
 Enable the token, pick an index (e.g. `main`) and note the token value.
 
+I preferred to install it via Docker:
+
+<img width="1649" height="557" alt="Captura de tela 2026-08-07 114335" src="https://github.com/user-attachments/assets/62e4544f-fb84-46d5-a072-542c57aa03b8" />
+
+
 ### 2. Configure the app
 
 ```bash
@@ -57,6 +62,9 @@ curl http://localhost:3000/error
 curl http://localhost:3000/nope
 ```
 
+<img width="1286" height="322" alt="Captura de tela 2026-08-07 114405" src="https://github.com/user-attachments/assets/5393d77a-772a-47c5-8176-409579ee824f" />
+
+
 ## Searching in Splunk
 
 In `Search & Reporting`. The `source` / `sourcetype` values below must match
@@ -73,6 +81,9 @@ index="main" source="node-app"
 ```spl
 index="main" level="error" OR level="warn"
 ```
+
+<img width="1893" height="937" alt="Captura de tela 2026-08-07 114302" src="https://github.com/user-attachments/assets/c09f63cb-c66e-4ae8-975c-6825f8665f38" />
+
 
 Note: changing `.env` and restarting only affects *new* events. Old events keep
 the previous `source`/`sourcetype`, so search with the current values (or `index="main"`
