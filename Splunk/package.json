@@ -1,0 +1,15 @@
+{
+  "name": "node-splunk-poc",
+  "version": "1.0.0",
+  "description": "Node.js server that logs events to Splunk via HTTP Event Collector (HEC)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "splunk-logging": "^0.11.1"
+  }
+}
